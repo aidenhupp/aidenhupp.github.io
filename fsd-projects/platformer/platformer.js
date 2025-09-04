@@ -25,26 +25,30 @@ $(function () {
     //////////////////////////////////
     // ONLY CHANGE BELOW THIS POINT //
     //////////////////////////////////
-
+    var debug = true;
+    var platcolor = "lightblue";
+      if (debug===true){platcolor = "red"};
     // TODO 1 - Enable the Grid
-    // toggleGrid();
+  toggleGrid();
 
 
     // TODO 2 - Create Platforms
-
-
-
+    createPlatform(200, 600, 100, 10);
+    createPlatform(400, 500, 100, 10);
+    createPlatform(500, 400, 10, 100);
+    createPlatform(500,400,100,10, platcolor)
+    createPlatform(500,510,100,10, platcolor)
 
     // TODO 3 - Create Collectables
-
+    createCollectable("database", 500, 400, 0);
 
 
     
     // TODO 4 - Create Cannons
+    createCannon("right", 900, 0);
+    createCannon("bottom", 200, 1000);
+    createCannon("top", 130, 500);
 
-
-    
-    
     //////////////////////////////////
     // ONLY CHANGE ABOVE THIS POINT //
     //////////////////////////////////
