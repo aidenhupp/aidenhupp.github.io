@@ -17,7 +17,9 @@ const playerScale = 0.8; //makes the player just a bit smaller. Doesn't affect t
 
 // Player variables
 const player = {
-  x: 50,
+  //x: 50 is default
+  x: 900,
+  //y: 100 is default
   y: 100,
   speedX: 0,
   speedY: 0,
@@ -93,9 +95,9 @@ let animationDetails = {};
 
 var collectableList = {
   database: { image: "images/collectables/database.png" },
-  diamond: { image: "images/collectables/diamond-head.png" },
-  grace: { image: "images/collectables/grace-head.png" },
-  kennedi: { image: "images/collectables/kennedi-head.png" },
-  max: { image: "images/collectables/max-head.png" },
-  steve: { image: "images/collectables/steve-head.png" },
+  gear: { image: "images/collectables/Gear.webp" },
+  broken: { image: "images/collectables/broken-robot.png" },
+  wires: { image: "images/collectables/electrical-wires.png" },
+  scrapmetal: { image: "images/collectables/scrap-metal.png" },
+  battery: { image: "images/collectables/battery.svg" },
 };
