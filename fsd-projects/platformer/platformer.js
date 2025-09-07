@@ -27,7 +27,7 @@ $(function () {
     //////////////////////////////////
     
     // TODO 1 - Enable the Grid
-    var debug = true;
+    var debug = false;
     var invis = "lightblue";
     var fake = "grey"
       if (debug===true){invis = "red",
@@ -56,6 +56,9 @@ $(function () {
     createPlatform(900, 350, 100, 10);
 
     createPlatform(1200, 650, 100, 10, invis);
+    createPlatform(800, 375, -100, 10, fake);
+    createPlatform(800, 375, -100, 10, fake);
+  createPlatform(1150, 700, -100, 10, fake);
 
 
 
@@ -71,8 +74,9 @@ $(function () {
     // TODO 4 - Create Cannons
     createCannon("right", 800, 0);
     createCannon("bottom", 200, 1000);
-    createCannon("top", 130, 500);
-
+    createCannon("top", 800, 500);
+    createCannon("bottom", 900, 1000)
+    createCannon("left", 400, 2500)
     //////////////////////////////////
     // ONLY CHANGE ABOVE THIS POINT //
     //////////////////////////////////

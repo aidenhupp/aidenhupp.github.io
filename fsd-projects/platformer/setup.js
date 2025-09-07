@@ -18,7 +18,7 @@ const playerScale = 0.8; //makes the player just a bit smaller. Doesn't affect t
 // Player variables
 const player = {
   //x: 50 is default
-  x: 900,
+  x: 50,
   //y: 100 is default
   y: 100,
   speedX: 0,
