@@ -27,7 +27,7 @@ $(function () {
     //////////////////////////////////
     
     // TODO 1 - Enable the Grid
-    var debug = false;
+    var debug = false
     var invis = "lightblue";
     var fake = "grey"
       if (debug===true){invis = "red",
@@ -42,27 +42,18 @@ $(function () {
     createPlatform(300, 300, -100, 10, fake);
     createPlatform(400, 510, 100, 10);
     createPlatform(500, 400, 10, 120);
-    
-
     createPlatform(700, 600, -100, 10, fake);
     createPlatform(200, 100, 5, 200, invis);
-
     createPlatform(1300, 150, 10, 100, invis);
     createPlatform(1300, 275, 50, 10);
     createPlatform(1300, 400, 100, 10, invis);
     createPlatform(1200, 325, -100, 10, fake);
-
     createPlatform(900, 600, 50, 10, invis);
     createPlatform(900, 350, 100, 10);
-
     createPlatform(1200, 650, 100, 10, invis);
     createPlatform(800, 375, -100, 10, fake);
     createPlatform(800, 375, -100, 10, fake);
-  createPlatform(1150, 700, -100, 10, fake);
-
-
-
-
+    createPlatform(1150, 700, -100, 10, fake);
     // TODO 3 - Create Collectables
     createCollectable("database", 500, 400, 0);
     createCollectable("battery", 900, 500, 0);
@@ -70,13 +61,12 @@ $(function () {
     createCollectable("wires", 1200, 600, 0);
     createCollectable("broken", 1300, 250, 0);
     createCollectable("gear", 200, 200, 0);
-
     // TODO 4 - Create Cannons
     createCannon("right", 800, 0);
     createCannon("bottom", 200, 1000);
-    createCannon("top", 800, 500);
-    createCannon("bottom", 900, 1000)
-    createCannon("left", 400, 2500)
+    createCannon("top", 800, 750);
+    createCannon("bottom", 900, 1000);
+    createCannon("left", 400, 2500);
     //////////////////////////////////
     // ONLY CHANGE ABOVE THIS POINT //
     //////////////////////////////////
