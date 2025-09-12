@@ -69,10 +69,10 @@
         //////////////////////////////////////////////////////////////////
 
         // TODO 2 - Variable declarations
-
-
-
-
+        var posX = 0;
+          //var posY = ___;
+        var score = 1;
+        var speedX = 6;
 
         /**
          * This Function will be called 20 times/second.
@@ -80,10 +80,14 @@
          * If the box drifts off the screen, turn it around!
          */
         function update() {
-
-        
-
-          
+          moveBoxTo(posX);
+         posX += speedX;
+          if (posX > boardWidth){
+            speedX*= -1;
+          } else if (posX < 0) {
+            speedX*=-1;
+          }
+          console.log(posX);
         }
 
         /**
@@ -94,10 +98,10 @@
          * - move the box to the left side of the screen.
          */
         function handleBoxClick() {
-
-
-
-
+          posX = 0;
+          changeBoxText(score);
+          score++;
+          speedX+=3;
         }
 
 
