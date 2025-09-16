@@ -50,7 +50,7 @@
         });
 
         // Every 50 milliseconds, call the update Function (see below)
-        var interval = setInterval(update, 50);
+        setInterval(update, 50);
 
         // Every time the box is clicked, call the handleBoxClick Function (see below)
         box.on("click", handleBoxClick);
@@ -114,10 +114,8 @@
           speedX = 3 * score + 10;
           speedY= 3 *score + 10;
         }
-        function endGame() {
-        clearInterval(10);
 }
-
+ // wish i could've done more but I couldn't figure it out, so i removed all the code of stuff I tried but couldn't finish
         
       })();
     </script>
