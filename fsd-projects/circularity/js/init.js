@@ -26,10 +26,12 @@ var init = function (window) {
         // TODO 2 : Create a function that draws a circle 
         function drawCircle(){
             circle = draw.randomCircleInArea(canvas, true, true, "#999", 2);
+            //draws a random circle of a random color in a random position on the 2d plain
             physikz.addRandomVelocity(circle, canvas, 5, 5);
             //the one above does what it says, randomizes the speed of a circle
             view.addChild(circle);
             circles.push(circle);
+            //this specifically adds the result of cricle to the array named circles
         } //function used to draw a randomly colored circle on the canvas and add it to an array
 
 
@@ -65,7 +67,7 @@ var init = function (window) {
            // physikz.updatePosition(circles[3]);
            // physikz.updatePosition(circles[4]);
 
-            //physikz.updatePosition moves every circle on screen
+            //physikz.updatePosition moves every circle on screen in a random direction
 
             // TODO 5 : Call game.checkCirclePosition() on your circles
            //game.checkCirclePosition(circles[0])
