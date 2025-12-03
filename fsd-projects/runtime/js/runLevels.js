@@ -18,12 +18,103 @@ var runLevels = function (window) {
 
     // TODOs 5 through 11 go here
     // BEGIN EDITING YOUR CODE HERE
+    function createObstacle(x, y){
+      var hitZoneSize = 24;//where collison causes damage
+      var damageFromObstacle = 10;//damage obstacle deals on collision
+      var obstacleHitZone = game.createObstacle(hitZoneSize, damageFromObstacle);//creates the obstacle, gives it a size, and dictates how much damage it'll do before storing the variable
+      obstacleHitZone.x = x;//sets the obstacle's x position
+      obstacleHitZone.y = y;//sets the obstacle's y position
+      game.addGameItem(obstacleHitZone);//adds the item to the game's playfield
+      var obstacleImage = draw.bitmap("img/sawblade.png");//draws sawblade sprite a a bitmap and stores the image
+      obstacleHitZone.addChild(obstacleImage);//takes the sprite of the saw and adds it as a child to the hitzone
+      obstacleImage.x = -25;//offset to place the obstacle sprite horizontally onto the hitzone
+      obstacleImage.y = -25;//offset to place the obstacle sprite vertically onto the hitzone
 
+      obstacleHitZone.rotationalVelocity = 5;
+    }
+
+
+    function createEnemy(x, y) {
+     // all code from TODO 11 and 12
+      var enemy = game.createGameItem("enemy", 24);//creates a hitzone and stores it i the variable enemy
+      var enemySprite = draw.rect(50, 50, "red");//draws the sprite for the enemy and stores it
+      enemySprite.x = -25;//horizontal offset to place the sprite onto the hitbox
+      enemySprite.y = -25;//vertical offset to place the sprite onto the hitbox
+      enemy.addChild(enemySprite);//adds enemySprite to enemy as a child
+      enemy.x = x;//sets the enemy x position
+      enemy.y = y - 50;// sets the enemy y position
+      game.addGameItem(enemy);//adds enemy to game
+      enemy.velocityX = -1;//movement speed of enemy
+      //handles what happens when Halle collides with an enemy
+      enemy.onPlayerCollision = function () {
+        game.changeIntegrity(-10)//reduces player health
+      }
+      //handles when Halle shoots an enemy
+      enemy.onProjectileCollision = function () {
+        game.increaseScore(100);//increases player score when an enemy is shot
+        //enemy fades away when shot
+        enemy.fadeOut();
+      }
+    }
+
+
+
+  createEnemy(400, groundY - 10);
+  createEnemy(800, groundY - 100);
+  createEnemy(1200, groundY - 50);
+
+      function createReward(x, y) {
+      var reward = game.createGameItem("enemy", 24);//creates a hitzone and stores it i the variable reward
+      var rewardSprite = draw.rect(50, 50, "blue");//draws the sprite for the reward and stores it
+      rewardSprite.x = -25;//horizontal offset to place the sprite onto the hitbox
+      rewardSprite.y = -25;//vertical offset to place the sprite onto the hitbox
+      reward.addChild(rewardSprite);//adds rewardSprite to reward as a child
+      reward.x = x;//sets the reward x position
+      reward.y = y - 50;// sets the reward y position
+      game.addGameItem(reward);//adds reward to game
+      reward.velocityX = -1;//movement speed of reward
+      //handles what happens when Halle collides with a reward
+      reward.onPlayerCollision = function () {
+        game.changeIntegrity(10)//increases player health
+        reward.fadeOut();
+      }
+    }
+
+    createReward(700, groundY-50);
+    createReward(1000, groundY-50);
+    createReward(6000, groundY-50);
+
+
+      function createLevelMarker(x, y) {
+      var levelMarker = game.createGameItem("level", 24);//creates a hitzone and stores it i the variable levelMarker
+      var levelSprite = draw.rect(50, 50, "yellow");//draws the sprite for the levelMarker and stores it
+      levelSprite.x = -25;//horizontal offset to place the sprite onto the hitbox
+      levelSprite.y = -25;//vertical offset to place the sprite onto the hitbox
+      levelMarker.addChild(levelSprite);//adds levelSprite to levelMarker as a child
+      levelMarker.x = x;//sets the levelMarker x position
+      levelMarker.y = y - 50;// sets the levelMarker y position
+      game.addGameItem(levelMarker);//adds levelMarker to game
+      levelMarker.velocityX = -1;//movement speed of levelMarker
+      //handles what happens when Halle collides with a levelMarker
+      levelMarker.onPlayerCollision = function () {
+        game.changeIntegrity(100)//increases player health
+        startLevel();
+        levelMarker.fadeOut();
+      }
+    }
+createLevelMarker(2000, groundY -100)
     
 
     function startLevel() {
       // TODO 13 goes below here
-
+      var level = levelData[currentLevel];//fetches the current level for the levelData array and stores it
+      var levelObjects = level.gameItems;//retrieves the array of gameItems and stores it 
+      for(var i = 0; i < levelObjects.length; i++){
+        var element = levelObjects[i];
+        if(element.type === 'obstacle') {
+          createObstacle(element.x, element.y, element.damage);
+        }
+      }
 
 
       //////////////////////////////////////////////
