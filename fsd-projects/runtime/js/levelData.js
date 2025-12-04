@@ -15,9 +15,15 @@ var makeLevelData = function (window) {
         number: 1,
         speed: -3,
         gameItems: [
-          { type: "obstacle", x: 400, y: groundY - 100, damage: 10},
-          { type: "obstacle", x: 700, y: groundY - 10, damage: 10},
-          { type: "obstacle", x: 900, y: groundY -10, damage: 10},
+          { type: "obstacle", x: 400, y: groundY - 10, damage: 10, rotation: 0, hitZone: 24, image: 'img/stalagmite (1).png' , offsetX: -85, offsetY: -60, scale: 0.7},
+          { type: "obstacle", x: 700, y: groundY - 10, damage: 10, rotation: 0, hitZone: 24, image: 'img/stalagmite (1).png' , offsetX: -85, offsetY: -60, scale: 0.7},
+          { type: "obstacle", x: 900, y: groundY -10, damage: 10, rotation: 0, hitZone: 24, image: 'img/stalagmite (1).png' , offsetX: -85, offsetY: -60, scale: 0.7},
+          { type: "enemy", x: 400, y: groundY -10, damage: 10},
+          { type: "enemy", x: 800, y: groundY -100, damage: 10},
+          { type: "enemy", x: 1200, y: groundY -10, damage: 10},
+          { type: "reward", x: 700, y: groundY -50, damage: -10},
+          { type: "reward", x: 1400, y: groundY -50, damage: -10},
+          { type: "levelMarker", x: 2100, y: groundY -50, damage: -100}
         ],
       },
       {
@@ -25,9 +31,9 @@ var makeLevelData = function (window) {
         number: 2,
         speed: -3,
         gameItems: [
-          { type: "obstacle", x: 400, y: groundY },
-          { type: "obstacle", x: 600, y: groundY },
-          { type: "obstacle", x: 900, y: groundY },
+          { type: "obstacle", x: 400, y: groundY, rotation: 0, hitZone: 24, image: 'img/stalagmite (1).png' , offsetX: -85, offsetY: -60, scale: 0.7},
+          { type: "obstacle", x: 600, y: groundY, rotation: 0, hitZone: 24, image: 'img/stalagmite (1).png' , offsetX: -85, offsetY: -60, scale: 0.7},
+          { type: "obstacle", x: 900, y: groundY, rotation: 0, hitZone: 24, image: 'img/stalagmite (1).png' , offsetX: -85, offsetY: -60, scale: 0.7},
         ],
       },
     ];
