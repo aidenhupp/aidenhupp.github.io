@@ -29,28 +29,31 @@ var runLevels = function (window) {
       obstacleHitZone.addChild(obstacleImage);//takes the sprite of the saw and adds it as a child to the hitzone
       obstacleImage.x = offsetX;//offset to place the obstacle sprite horizontally onto the hitzone
       obstacleImage.y = offsetY;//offset to place the obstacle sprite vertically onto the hitzone
-      obstacleImage.scaleX = scale
+      obstacleImage.scaleX = scale;
       obstacleImage.scaleY = scale;
 
       obstacleHitZone.rotationalVelocity = rotation;
     }
 
 
-    function createEnemy(x, y) {
+    function createEnemy(x, y, damage, hitZone, image, offsetX, offsetY, scale, velocity) {
      // all code from TODO 11 and 12
 
-      var enemy = game.createGameItem("enemy", 24);//creates a hitzone and stores it i the variable enemy
-      var enemySprite = draw.rect(50, 50, "red");//draws the sprite for the enemy and stores it
-      enemySprite.x = -25;//horizontal offset to place the sprite onto the hitbox
-      enemySprite.y = -25;//vertical offset to place the sprite onto the hitbox
+      var enemy = game.createGameItem("enemy", hitZone);//creates a hitzone and stores it i the variable enemy
+      var enemySprite = draw.bitmap(image);//draws the sprite for the enemy and stores it
+      enemySprite.x = offsetX;//horizontal offset to place the sprite onto the hitbox
+      enemySprite.y = offsetY;//vertical offset to place the sprite onto the hitbox
+      enemySprite.scaleX = scale;
+      enemySprite.scaleY = scale;
       enemy.addChild(enemySprite);//adds enemySprite to enemy as a child
       enemy.x = x;//sets the enemy x position
       enemy.y = y - 50;// sets the enemy y position
       game.addGameItem(enemy);//adds enemy to game
-      enemy.velocityX = -1;//movement speed of enemy
+      enemy.velocityX = velocity;//movement speed of enemy
+      
       //handles what happens when Halle collides with an enemy
       enemy.onPlayerCollision = function () {
-        game.changeIntegrity(-10)//reduces player health
+        game.changeIntegrity(damage)//reduces player health
       }
       //handles when Halle shoots an enemy
       enemy.onProjectileCollision = function () {
@@ -115,7 +118,7 @@ var runLevels = function (window) {
           //x, y, damage, rotation, hitZone, image, offsetX, offsetY, scale
         }
         if(element.type === 'enemy') {
-          createEnemy(element.x, element.y, element.damage, element.rotation);
+          createEnemy(element.x, element.y, element.damage, element.hitZone, element.image, element.offsetX, element.offsetY, element.scale, element.velocity);
         }
         if(element.type === 'reward') {
           createReward(element.x, element.y, element.damage, element.rotation);
