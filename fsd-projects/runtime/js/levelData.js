@@ -24,13 +24,16 @@ var makeLevelData = function (window) {
           { type: "obstacle", x: 1600, y: groundY -10, damage: 10, rotation: 0, hitZone: 24, image: 'img/stalagmite (1).png' , offsetX: -85, offsetY: -60, scale: 0.7},
           { type: "obstacle", x: 3100, y: groundY -10, damage: 10, rotation: 0, hitZone: 24, image: 'img/stalagmite (1).png' , offsetX: -85, offsetY: -60, scale: 0.7},
           { type: "obstacle", x: 3500, y: groundY -10, damage: 10, rotation: 0, hitZone: 24, image: 'img/stalagmite (1).png' , offsetX: -85, offsetY: -60, scale: 0.7},
-          { type: "enemy", x: 2400, y: groundY +20, damage: 10, hitZone: 24, image: 'img/runWolf.png' , offsetX: -85, offsetY: -60, scale: 0.5, velocity: -3 },
-          { type: "enemy", x: 1200, y: groundY -115, damage: 20, hitZone: 24, image: 'img/flyingBat.png' , offsetX: -50, offsetY: -60, scale: 0.1, velocity: -2},
+          { type: "enemy", x: 3400, y: groundY +20, damage: 10, hitZone: 24, image: 'img/runWolf.png' , offsetX: -85, offsetY: -60, scale: 0.5, velocity: -3 },
+          { type: "enemy", x: 5200, y: groundY +20, damage: 10, hitZone: 24, image: 'img/runWolf.png' , offsetX: -85, offsetY: -60, scale: 0.5, velocity: -3 },
+          { type: "enemy", x: 1200, y: groundY -115, damage: -20, hitZone: 24, image: 'img/flyingBat.png' , offsetX: -50, offsetY: -60, scale: 0.1, velocity: -2},
           { type: "enemy", x: 1200, y: groundY +20, damage: 10, hitZone: 24, image: 'img/runWolf.png' , offsetX: -85, offsetY: -60, scale: 0.5, velocity: -2},
+          { type: "enemy", x: 9040, y: groundY +20, damage: 10, hitZone: 24, image: 'img/runWolf.png' , offsetX: -85, offsetY: -60, scale: 0.5, velocity: -3 },
+          { type: "enemy", x: 10000, y: groundY +20, damage: 10, hitZone: 24, image: 'img/runWolf.png' , offsetX: -85, offsetY: -60, scale: 0.5, velocity: -3 },
           { type: "reward", x: 1400, y: groundY -50, damage: -10},
           { type: "reward", x: 2100, y: groundY -50, damage: -10},
           { type: "reward", x: 3200, y: groundY -50, damage: -10},
-          { type: "levelMarker", x: 5000, y: groundY -50, damage: -50}
+          { type: "levelMarker", x: 10000, y: groundY -50, damage: -50}
         ],
       },
       {

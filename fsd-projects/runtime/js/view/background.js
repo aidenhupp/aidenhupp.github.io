@@ -29,8 +29,8 @@ var background = function (window) {
         // ANIMATION VARIABLES HERE //////////////////////////////////////
         //////////////////////////////////////////////////////////////////
         ///////////// TODO (several): ////////////////
-        var tree;
-        var buildings = [];
+       // var tree;
+        //var buildings = [];
 
         // called at the start of game and whenever the page is resized
         // add objects for display in background. draws each image added to the background once
@@ -40,10 +40,20 @@ var background = function (window) {
             // TODO 1:
             // this currently fills the background with an obnoxious yellow;
             // you should modify both the height and color to suit your game
-            var backgroundFill = draw.bitmap('img/caveBG.png');//creates a rectangle starting at 0 and ending at ground level and colors it as its stores in var backgroundFill
-            background.addChild(backgroundFill);//adds the backgroundFill to the background object, placing it 
             
-            // TODO 2: - Add a moon and starfield
+            var backgroundFill = draw.bitmap('img/caveBG.png');
+            backgroundFill.x = -200;
+            backgroundFill.y = 0;
+            backgroundFill.scaleX = 4;
+            backgroundFill.scaleY = 1.6;        
+            background.addChild(backgroundFill);//adds the backgroundFill to the background object, placing it 
+            var backgroundFloor = draw.bitmap('img/cavefloorBG.png');
+            backgroundFloor.x = -200;
+            backgroundFloor.y = 450;
+            backgroundFloor.scaleX = 4;
+            backgroundFloor.scaleY = 1.4;   
+            background.addChild(backgroundFloor);//adds the backgroundFloor to the background object, placing it 
+            /*/ TODO 2: - Add a moon and starfield
 
             for (var i = 0; i < 100; i++){
                 var circle = draw.circle(2.5, "white", "LightGray", 2);//creates a circle with a specified radius, border color, and fill color
@@ -72,7 +82,7 @@ var background = function (window) {
             tree = draw.bitmap("img/tree.png");//creates a bitmap object using the tree image and stores it in the variable tree
             tree.x = 0;//sets the x value of the tree
             tree.y = groundY+20;// sets the y value of the tree
-            background.addChild(tree);//adds tree to background container
+            background.addChild(tree);//adds tree to background container*/
             
         } // end of render function - DO NOT DELETE
         
@@ -85,7 +95,7 @@ var background = function (window) {
             var canvasHeight = app.canvas.height;
             var groundY = ground.y;
             
-            // TODO 3: Part 2 - Move the tree!
+            /*// TODO 3: Part 2 - Move the tree!
             tree.x = tree.x - 1;//moves the tree to the left by subtracting from its current x position
            //checks if the tree has gone of the left and rests to the right
             if (tree.x < -200) {
@@ -101,7 +111,7 @@ var background = function (window) {
                     building.x = canvas.width;
                 }//if the x value of the building has gone off the left side of the screen it ges back to the right of the screen
             }
-
+                */
         } // end of update function - DO NOT DELETE
         
         
