@@ -67,7 +67,7 @@ var runLevels = function (window) {
 
   
 
-      function createReward(x, y) {
+      function createReward(x, y, damage) {
       var reward = game.createGameItem("enemy", 24);//creates a hitzone and stores it i the variable reward
       var rewardSprite = draw.rect(50, 50, "blue");//draws the sprite for the reward and stores it
       rewardSprite.x = -25;//horizontal offset to place the sprite onto the hitbox
@@ -79,7 +79,7 @@ var runLevels = function (window) {
       reward.velocityX = -1;//movement speed of reward
       //handles what happens when Halle collides with a reward
       reward.onPlayerCollision = function () {
-        game.changeIntegrity(10)//increases player health
+        game.changeIntegrity(damage)//increases player health
         reward.fadeOut();
       }
     }
@@ -87,7 +87,7 @@ var runLevels = function (window) {
     
 
 
-      function createLevelMarker(x, y) {
+      function createLevelMarker(x, y, damage) {
       var levelMarker = game.createGameItem("level", 24);//creates a hitzone and stores it i the variable levelMarker
       var levelSprite = draw.rect(50, 50, "yellow");//draws the sprite for the levelMarker and stores it
       levelSprite.x = -25;//horizontal offset to place the sprite onto the hitbox
@@ -99,7 +99,7 @@ var runLevels = function (window) {
       levelMarker.velocityX = -1;//movement speed of levelMarker
       //handles what happens when Halle collides with a levelMarker
       levelMarker.onPlayerCollision = function () {
-        game.changeIntegrity(100)//increases player health
+        game.changeIntegrity(damage)//increases player health
         startLevel();
         levelMarker.fadeOut();
       }
@@ -121,10 +121,10 @@ var runLevels = function (window) {
           createEnemy(element.x, element.y, element.damage, element.hitZone, element.image, element.offsetX, element.offsetY, element.scale, element.velocity);
         }
         if(element.type === 'reward') {
-          createReward(element.x, element.y, element.damage, element.rotation);
+          createReward(element.x, element.y, element.damage);
         }
         if(element.type === 'levelMarker') {
-          createLevelMarker(element.x, element.y, element.damage, element.rotation);
+          createLevelMarker(element.x, element.y, element.damage);
         }
       }
 
