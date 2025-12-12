@@ -44,7 +44,7 @@ var makeLevelData = function (window) {
           { type: "reward", x: 2000, y: groundY -50, damage: 10},
           { type: "reward", x: 4000, y: groundY -50, damage: 10},
           { type: "reward", x: 8000, y: groundY -50, damage: 10},
-          { type: "levelMarker", x: 8500, y: groundY -50, damage: 50}
+          { type: "levelMarker", x: 500, y: groundY -50, damage: 50}
         ],
       },
       {

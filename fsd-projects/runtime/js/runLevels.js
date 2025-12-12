@@ -76,7 +76,7 @@ var runLevels = function (window) {
       reward.x = x;//sets the reward x position
       reward.y = y - 50;// sets the reward y position
       game.addGameItem(reward);//adds reward to game
-      reward.velocityX = -1;//movement speed of reward
+      reward.velocityX = -2;//movement speed of reward
       //handles what happens when Halle collides with a reward
       reward.onPlayerCollision = function () {
         game.changeIntegrity(damage)//increases player health
@@ -89,14 +89,14 @@ var runLevels = function (window) {
 
       function createLevelMarker(x, y, damage) {
       var levelMarker = game.createGameItem("level", 24);//creates a hitzone and stores it i the variable levelMarker
-      var levelSprite = draw.rect(50, 50, "yellow");//draws the sprite for the levelMarker and stores it
+      var levelSprite = draw.bitmap('img/Homestretch.webp');//draws the sprite for the levelMarker and stores it
       levelSprite.x = -25;//horizontal offset to place the sprite onto the hitbox
       levelSprite.y = -25;//vertical offset to place the sprite onto the hitbox
       levelMarker.addChild(levelSprite);//adds levelSprite to levelMarker as a child
       levelMarker.x = x;//sets the levelMarker x position
       levelMarker.y = y - 50;// sets the levelMarker y position
       game.addGameItem(levelMarker);//adds levelMarker to game
-      levelMarker.velocityX = -1;//movement speed of levelMarker
+      levelMarker.velocityX = -2;//movement speed of levelMarker
       //handles what happens when Halle collides with a levelMarker
       levelMarker.onPlayerCollision = function () {
         game.changeIntegrity(damage)//increases player health
