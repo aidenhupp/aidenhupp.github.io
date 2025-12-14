@@ -67,16 +67,18 @@ var runLevels = function (window) {
 
   
 
-      function createReward(x, y, damage) {
-      var reward = game.createGameItem("enemy", 24);//creates a hitzone and stores it i the variable reward
-      var rewardSprite = draw.rect(50, 50, "blue");//draws the sprite for the reward and stores it
-      rewardSprite.x = -25;//horizontal offset to place the sprite onto the hitbox
-      rewardSprite.y = -25;//vertical offset to place the sprite onto the hitbox
+      function createReward(x, y, damage, image, scale, offset) {
+      var reward = game.createGameItem("reward", 30);//creates a hitzone and stores it i the variable reward
+      var rewardSprite = draw.bitmap(image);//draws the sprite for the reward and stores it
+      rewardSprite.x = offset;//horizontal offset to place the sprite onto the hitbox
+      rewardSprite.y = offset;//vertical offset to place the sprite onto the hitbox
       reward.addChild(rewardSprite);//adds rewardSprite to reward as a child
       reward.x = x;//sets the reward x position
       reward.y = y - 50;// sets the reward y position
       game.addGameItem(reward);//adds reward to game
       reward.velocityX = -2;//movement speed of reward
+      reward.scaleX = scale;
+      reward.scaleY = scale;
       //handles what happens when Halle collides with a reward
       reward.onPlayerCollision = function () {
         game.changeIntegrity(damage)//increases player health
@@ -121,10 +123,10 @@ var runLevels = function (window) {
           createEnemy(element.x, element.y, element.damage, element.hitZone, element.image, element.offsetX, element.offsetY, element.scale, element.velocity);
         }
         if(element.type === 'reward') {
-          createReward(element.x, element.y, element.damage);
+          createReward(element.x, element.y, element.damage, element.image, element.scale, element.offset);
         }
         if(element.type === 'levelMarker') {
-          createLevelMarker(element.x, element.y, element.damage);
+          createLevelMarker(element.x, element.y, element.damage, element.image);
         }
       }
 

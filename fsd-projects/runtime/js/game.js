@@ -215,6 +215,7 @@
         /* Improves performance by lazily creating objects defined in 
            levelData
          */
+        //this is what sets up the levels, only spawning certain things when levelData is equal to 1 or 2
         function playLevel(levelData) {
             if(gameItemFactory == null) {
                 throw new Error("No gameItemFactory set");
