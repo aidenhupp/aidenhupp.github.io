@@ -15,7 +15,7 @@ var makeLevelData = function (window) {
         number: 1,
         speed: -3,
         gameItems: [
-          /*{ type: "obstacle", x: 400, y: groundY -10, damage: 10, rotation: 0, hitZone: 24, image: 'img/stalagmite (1).png' , offsetX: -85, offsetY: -60, scale: 0.7},
+          { type: "obstacle", x: 400, y: groundY -10, damage: 10, rotation: 0, hitZone: 24, image: 'img/stalagmite (1).png' , offsetX: -85, offsetY: -60, scale: 0.7},
           { type: "obstacle", x: 700, y: groundY -10, damage: 10, rotation: 0, hitZone: 24, image: 'img/stalagmite (1).png' , offsetX: -85, offsetY: -60, scale: 0.7},
           { type: "obstacle", x: 900, y: groundY -10, damage: 10, rotation: 0, hitZone: 24, image: 'img/stalagmite (1).png' , offsetX: -85, offsetY: -60, scale: 0.7},
           { type: "obstacle", x: 900, y: groundY -10, damage: 10, rotation: 0, hitZone: 24, image: 'img/stalagmite (1).png' , offsetX: -85, offsetY: -60, scale: 0.7},
@@ -43,7 +43,7 @@ var makeLevelData = function (window) {
           { type: "enemy", x: 10000, y: groundY +20, damage: -10, hitZone: 24, image: 'img/runWolf.png' , offsetX: -85, offsetY: -60, scale: 0.5, velocity: -3 },
           { type: "reward", x: 2000, y: groundY -50, damage: 10, image: "img/battery.webp", scale: .05},
           { type: "reward", x: 4000, y: groundY -50, damage: 10, image: "img/battery.webp", scale: .05},
-          { type: "reward", x: 8000, y: groundY -50, damage: 10, image: "img/battery.webp", scale: .05},*/
+          { type: "reward", x: 8000, y: groundY -50, damage: 10, image: "img/battery.webp", scale: .05},
           { type: "levelMarker", x: 1000, y: groundY -50, damage: 50}
         ],
       },
