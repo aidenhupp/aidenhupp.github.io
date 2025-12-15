@@ -44,7 +44,7 @@ var makeLevelData = function (window) {
           { type: "reward", x: 2000, y: groundY -50, damage: 10, image: "img/battery.webp", scale: .05},
           { type: "reward", x: 4000, y: groundY -50, damage: 10, image: "img/battery.webp", scale: .05},
           { type: "reward", x: 8000, y: groundY -50, damage: 10, image: "img/battery.webp", scale: .05},
-          { type: "levelMarker", x: 1000, y: groundY -50, damage: 50}
+          { type: "levelMarker", x: 9000, y: groundY -50, damage: 50}
         ],
       },
       {
